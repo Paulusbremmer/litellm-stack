@@ -1,0 +1,10 @@
+# Ignore environment and secret files containing sensitive keys
+.env
+.env.*
+!.env.example
+secrets/
+*.json
+!.secrets/gcp-key.json.example
+*.key
+*.pem
+.DS_Store

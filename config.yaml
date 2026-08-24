@@ -1,0 +1,945 @@
+model_list:
+  # ==================== GEMINI AUTO ROUTER DEPLOYMENTS ====================
+  - model_name: gemini-auto-studio
+    litellm_params:
+      model: gemini/gemini-3.7-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-auto-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  # ==================== GEMINI 3.7 FLASH ====================
+  - model_name: gemini-3.7-flash-high-studio
+    litellm_params:
+      model: gemini/gemini-3.7-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-3.7-flash-high-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  - model_name: gemini-3.7-flash-medium-studio
+    litellm_params:
+      model: gemini/gemini-3.7-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-3.7-flash-medium-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  - model_name: gemini-3.7-flash-low-studio
+    litellm_params:
+      model: gemini/gemini-3.7-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-3.7-flash-low-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  # ==================== GEMINI 3.6 FLASH ====================
+  - model_name: gemini-3.6-flash-high-studio
+    litellm_params:
+      model: gemini/gemini-3.6-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-3.6-flash-high-vertex
+    litellm_params:
+      model: vertex_ai/gemini-3.6-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  - model_name: gemini-3.6-flash-medium-studio
+    litellm_params:
+      model: gemini/gemini-3.6-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-3.6-flash-medium-vertex
+    litellm_params:
+      model: vertex_ai/gemini-3.6-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  - model_name: gemini-3.6-flash-low-studio
+    litellm_params:
+      model: gemini/gemini-3.6-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-3.6-flash-low-vertex
+    litellm_params:
+      model: vertex_ai/gemini-3.6-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  # ==================== GEMINI 2.5 FLASH ====================
+  - model_name: gemini-2.5-flash-high-studio
+    litellm_params:
+      model: gemini/gemini-2.5-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-2.5-flash-high-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  - model_name: gemini-2.5-flash-medium-studio
+    litellm_params:
+      model: gemini/gemini-2.5-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-2.5-flash-medium-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  - model_name: gemini-2.5-flash-low-studio
+    litellm_params:
+      model: gemini/gemini-2.5-flash
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-2.5-flash-low-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
+
+  # ==================== GEMINI FLASH LITE ====================
+  - model_name: gemini-flash-lite-high-studio
+    litellm_params:
+      model: gemini/gemini-2.5-flash-lite
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-flash-lite-high-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash-lite
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0000000375
+      output_cost_per_token: 0.00000015
+
+  - model_name: gemini-flash-lite-medium-studio
+    litellm_params:
+      model: gemini/gemini-2.5-flash-lite
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-flash-lite-medium-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash-lite
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0000000375
+      output_cost_per_token: 0.00000015
+
+  - model_name: gemini-flash-lite-low-studio
+    litellm_params:
+      model: gemini/gemini-2.5-flash-lite
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-flash-lite-low-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash-lite
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0000000375
+      output_cost_per_token: 0.00000015
+
+  # ==================== GEMINI 3.1 PRO ====================
+  - model_name: gemini-3.1-pro-high-studio
+    litellm_params:
+      model: gemini/gemini-3.1-pro-preview
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-3.1-pro-high-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-pro
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.00000125
+      output_cost_per_token: 0.0000050
+
+  - model_name: gemini-3.1-pro-medium-studio
+    litellm_params:
+      model: gemini/gemini-3.1-pro-preview
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-3.1-pro-medium-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-pro
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.00000125
+      output_cost_per_token: 0.0000050
+
+  - model_name: gemini-3.1-pro-low-studio
+    litellm_params:
+      model: gemini/gemini-3.1-pro-preview
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-3.1-pro-low-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-pro
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.00000125
+      output_cost_per_token: 0.0000050
+
+  # ==================== GEMINI 2.5 PRO ====================
+  - model_name: gemini-2.5-pro-high-studio
+    litellm_params:
+      model: gemini/gemini-2.5-pro
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-2.5-pro-high-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-pro
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "high"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.00000125
+      output_cost_per_token: 0.0000050
+
+  - model_name: gemini-2.5-pro-medium-studio
+    litellm_params:
+      model: gemini/gemini-2.5-pro
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-2.5-pro-medium-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-pro
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "medium"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.00000125
+      output_cost_per_token: 0.0000050
+
+  - model_name: gemini-2.5-pro-low-studio
+    litellm_params:
+      model: gemini/gemini-2.5-pro
+      api_key: os.environ/GEMINI_API_KEY
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.0
+      output_cost_per_token: 0.0
+
+  - model_name: gemini-2.5-pro-low-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-pro
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: os.environ/VERTEX_LOCATION
+      reasoning_effort: "low"
+      safety_settings:
+        - category: HARM_CATEGORY_HARASSMENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_HATE_SPEECH
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_DANGEROUS_CONTENT
+          threshold: BLOCK_NONE
+        - category: HARM_CATEGORY_CIVIC_INTEGRITY
+          threshold: BLOCK_NONE
+    model_info:
+      input_cost_per_token: 0.00000125
+      output_cost_per_token: 0.0000050
+
+router_settings:
+  # Routing Strategy
+  routing_strategy: "usage-based-routing"
+
+  model_group_alias:
+    # --- GEMINI AUTO ROUTER ALIASES ---
+    auto: "gemini-auto-studio"
+    gemini-auto: "gemini-auto-studio"
+    gemini-auto-high: "gemini-3.1-pro-high-studio"
+    gemini-auto-medium: "gemini-3.7-flash-medium-studio"
+    gemini-auto-low: "gemini-flash-lite-low-studio"
+
+    # --- GEMINI 3.7 FLASH ---
+    gemini-3.7-flash: "gemini-3.7-flash-medium-studio"
+    gemini-3.7-flash-high: "gemini-3.7-flash-high-studio"
+    gemini-3.7-flash-medium: "gemini-3.7-flash-medium-studio"
+    gemini-3.7-flash-low: "gemini-3.7-flash-low-studio"
+
+    # --- GEMINI 3.6 FLASH ---
+    gemini-3.6-flash: "gemini-3.6-flash-medium-studio"
+    gemini-3.6-flash-high: "gemini-3.6-flash-high-studio"
+    gemini-3.6-flash-medium: "gemini-3.6-flash-medium-studio"
+    gemini-3.6-flash-low: "gemini-3.6-flash-low-studio"
+
+    # --- GEMINI 2.5 FLASH ---
+    gemini-flash: "gemini-2.5-flash-medium-studio"
+    gemini-2.5-flash: "gemini-2.5-flash-medium-studio"
+    gemini-2.0-flash: "gemini-2.5-flash-medium-studio"
+    gemini-1.5-flash: "gemini-2.5-flash-medium-studio"
+    gemini-2.5-flash-high: "gemini-2.5-flash-high-studio"
+    gemini-flash-high: "gemini-2.5-flash-high-studio"
+    gemini-2.5-flash-medium: "gemini-2.5-flash-medium-studio"
+    gemini-flash-medium: "gemini-2.5-flash-medium-studio"
+    gemini-2.5-flash-low: "gemini-2.5-flash-low-studio"
+    gemini-flash-low: "gemini-2.5-flash-low-studio"
+
+    # --- GEMINI FLASH LITE ---
+    gemini-flash-lite: "gemini-flash-lite-medium-studio"
+    gemini-2.5-flash-lite: "gemini-flash-lite-medium-studio"
+    gemini-flash-lite-high: "gemini-flash-lite-high-studio"
+    gemini-flash-lite-medium: "gemini-flash-lite-medium-studio"
+    gemini-flash-lite-low: "gemini-flash-lite-low-studio"
+
+    # --- GEMINI 3.1 PRO ---
+    gemini-pro: "gemini-3.1-pro-medium-studio"
+    gemini-3.1-pro: "gemini-3.1-pro-medium-studio"
+    gemini-3.1-pro-preview: "gemini-3.1-pro-medium-studio"
+    gemini-3.1-pro-high: "gemini-3.1-pro-high-studio"
+    gemini-pro-high: "gemini-3.1-pro-high-studio"
+    gemini-3.1-pro-medium: "gemini-3.1-pro-medium-studio"
+    gemini-pro-medium: "gemini-3.1-pro-medium-studio"
+    gemini-3.1-pro-low: "gemini-3.1-pro-low-studio"
+    gemini-pro-low: "gemini-3.1-pro-low-studio"
+
+    # --- GEMINI 2.5 PRO ---
+    gemini-2.5-pro: "gemini-2.5-pro-medium-studio"
+    gemini-2.5-pro-high: "gemini-2.5-pro-high-studio"
+    gemini-2.5-pro-medium: "gemini-2.5-pro-medium-studio"
+    gemini-2.5-pro-low: "gemini-2.5-pro-low-studio"
+
+    # --- GENERIC REASONING SHORTCUTS ---
+    reasoning-low: "gemini-flash-lite-low-studio"
+    gemini-reasoning-low: "gemini-flash-lite-low-studio"
+
+    reasoning-medium: "gemini-2.5-flash-medium-studio"
+    gemini-reasoning-medium: "gemini-2.5-flash-medium-studio"
+
+    reasoning-high: "gemini-3.1-pro-high-studio"
+    gemini-reasoning-high: "gemini-3.1-pro-high-studio"
+
+  # Automatic Failover Mapping
+  fallbacks:
+    # Auto Router Fallbacks
+    - "gemini-auto-studio": ["gemini-auto-vertex"]
+    - "gemini-auto": ["gemini-auto-vertex"]
+    - "auto": ["gemini-auto-vertex"]
+    - "gemini-auto-high": ["gemini-3.1-pro-high-vertex"]
+    - "gemini-auto-medium": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-auto-low": ["gemini-flash-lite-low-vertex"]
+
+    # 3.7 Flash
+    - "gemini-3.7-flash-studio": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-3.7-flash": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-3.7-flash-high-studio": ["gemini-3.7-flash-high-vertex"]
+    - "gemini-3.7-flash-high": ["gemini-3.7-flash-high-vertex"]
+    - "gemini-3.7-flash-medium-studio": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-3.7-flash-medium": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-3.7-flash-low-studio": ["gemini-3.7-flash-low-vertex"]
+    - "gemini-3.7-flash-low": ["gemini-3.7-flash-low-vertex"]
+
+    # 3.6 Flash
+    - "gemini-3.6-flash-studio": ["gemini-3.6-flash-medium-vertex"]
+    - "gemini-3.6-flash": ["gemini-3.6-flash-medium-vertex"]
+    - "gemini-3.6-flash-high-studio": ["gemini-3.6-flash-high-vertex"]
+    - "gemini-3.6-flash-high": ["gemini-3.6-flash-high-vertex"]
+    - "gemini-3.6-flash-medium-studio": ["gemini-3.6-flash-medium-vertex"]
+    - "gemini-3.6-flash-medium": ["gemini-3.6-flash-medium-vertex"]
+    - "gemini-3.6-flash-low-studio": ["gemini-3.6-flash-low-vertex"]
+    - "gemini-3.6-flash-low": ["gemini-3.6-flash-low-vertex"]
+
+    # 2.5 Flash
+    - "gemini-2.5-flash-studio": ["gemini-2.5-flash-medium-vertex"]
+    - "gemini-flash": ["gemini-2.5-flash-medium-vertex"]
+    - "gemini-2.5-flash": ["gemini-2.5-flash-medium-vertex"]
+    - "gemini-2.5-flash-high-studio": ["gemini-2.5-flash-high-vertex"]
+    - "gemini-2.5-flash-high": ["gemini-2.5-flash-high-vertex"]
+    - "gemini-flash-high": ["gemini-2.5-flash-high-vertex"]
+    - "gemini-2.5-flash-medium-studio": ["gemini-2.5-flash-medium-vertex"]
+    - "gemini-2.5-flash-medium": ["gemini-2.5-flash-medium-vertex"]
+    - "gemini-flash-medium": ["gemini-2.5-flash-medium-vertex"]
+    - "gemini-2.5-flash-low-studio": ["gemini-2.5-flash-low-vertex"]
+    - "gemini-2.5-flash-low": ["gemini-2.5-flash-low-vertex"]
+    - "gemini-flash-low": ["gemini-2.5-flash-low-vertex"]
+
+    # Flash Lite
+    - "gemini-flash-lite-studio": ["gemini-flash-lite-medium-vertex"]
+    - "gemini-flash-lite": ["gemini-flash-lite-medium-vertex"]
+    - "gemini-flash-lite-high-studio": ["gemini-flash-lite-high-vertex"]
+    - "gemini-flash-lite-high": ["gemini-flash-lite-high-vertex"]
+    - "gemini-flash-lite-medium-studio": ["gemini-flash-lite-medium-vertex"]
+    - "gemini-flash-lite-medium": ["gemini-flash-lite-medium-vertex"]
+    - "gemini-flash-lite-low-studio": ["gemini-flash-lite-low-vertex"]
+    - "gemini-flash-lite-low": ["gemini-flash-lite-low-vertex"]
+
+    # 3.1 Pro
+    - "gemini-3.1-pro-studio": ["gemini-3.1-pro-medium-vertex"]
+    - "gemini-3.1-pro": ["gemini-3.1-pro-medium-vertex"]
+    - "gemini-pro": ["gemini-3.1-pro-medium-vertex"]
+    - "gemini-3.1-pro-high-studio": ["gemini-3.1-pro-high-vertex"]
+    - "gemini-3.1-pro-high": ["gemini-3.1-pro-high-vertex"]
+    - "gemini-pro-high": ["gemini-3.1-pro-high-vertex"]
+    - "gemini-3.1-pro-medium-studio": ["gemini-3.1-pro-medium-vertex"]
+    - "gemini-3.1-pro-medium": ["gemini-3.1-pro-medium-vertex"]
+    - "gemini-pro-medium": ["gemini-3.1-pro-medium-vertex"]
+    - "gemini-3.1-pro-low-studio": ["gemini-3.1-pro-low-vertex"]
+    - "gemini-3.1-pro-low": ["gemini-3.1-pro-low-vertex"]
+    - "gemini-pro-low": ["gemini-3.1-pro-low-vertex"]
+
+    # 2.5 Pro
+    - "gemini-2.5-pro-studio": ["gemini-2.5-pro-medium-vertex"]
+    - "gemini-2.5-pro": ["gemini-2.5-pro-medium-vertex"]
+    - "gemini-2.5-pro-high-studio": ["gemini-2.5-pro-high-vertex"]
+    - "gemini-2.5-pro-high": ["gemini-2.5-pro-high-vertex"]
+    - "gemini-2.5-pro-medium-studio": ["gemini-2.5-pro-medium-vertex"]
+    - "gemini-2.5-pro-medium": ["gemini-2.5-pro-medium-vertex"]
+    - "gemini-2.5-pro-low-studio": ["gemini-2.5-pro-low-vertex"]
+    - "gemini-2.5-pro-low": ["gemini-2.5-pro-low-vertex"]
+
+    # Generic Reasoning
+    - "reasoning-low": ["gemini-flash-lite-low-vertex"]
+    - "gemini-reasoning-low": ["gemini-flash-lite-low-vertex"]
+    - "reasoning-medium": ["gemini-2.5-flash-medium-vertex"]
+    - "gemini-reasoning-medium": ["gemini-2.5-flash-medium-vertex"]
+    - "reasoning-high": ["gemini-3.1-pro-high-vertex"]
+    - "gemini-reasoning-high": ["gemini-3.1-pro-high-vertex"]
+
+  num_retries: 0
+  cooldown_time: 60
