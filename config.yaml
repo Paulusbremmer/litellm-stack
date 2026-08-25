@@ -199,7 +199,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-3.6-flash
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -241,7 +241,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-3.6-flash
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -283,7 +283,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-3.6-flash
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -326,7 +326,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-2.5-flash
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -368,7 +368,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-2.5-flash
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -410,7 +410,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-2.5-flash
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -453,7 +453,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-2.5-flash-lite
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -495,7 +495,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-2.5-flash-lite
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -537,7 +537,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-2.5-flash-lite
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -707,7 +707,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-2.5-pro
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -749,7 +749,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-2.5-pro
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -791,7 +791,7 @@ model_list:
     litellm_params:
       model: vertex_ai/gemini-2.5-pro
       vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: os.environ/VERTEX_LOCATION
+      vertex_location: "global"
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
