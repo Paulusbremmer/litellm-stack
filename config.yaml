@@ -1,5 +1,6 @@
 litellm_settings:
   drop_params: true
+  request_timeout: 15
 
 model_list:
   # ==================== GEMINI AUTO ROUTER DEPLOYMENTS ====================
@@ -7,6 +8,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -49,6 +51,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -90,6 +93,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -131,6 +135,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -173,6 +178,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.6-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -214,6 +220,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.6-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -255,6 +262,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.6-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -297,6 +305,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -338,6 +347,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -379,6 +389,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-flash
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -421,6 +432,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -462,6 +474,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -503,6 +516,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -545,6 +559,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.1-pro-preview
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -586,6 +601,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.1-pro-preview
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -627,6 +643,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-3.1-pro-preview
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -669,6 +686,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-pro
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "high"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -710,6 +728,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-pro
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "medium"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -751,6 +770,7 @@ model_list:
     litellm_params:
       model: gemini/gemini-2.5-pro
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 15
       reasoning_effort: "low"
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
