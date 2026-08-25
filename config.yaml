@@ -25,7 +25,7 @@ model_list:
 
   - model_name: gemini-auto-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: os.environ/VERTEX_LOCATION
       reasoning_effort: "medium"
@@ -67,7 +67,7 @@ model_list:
 
   - model_name: gemini-3.7-flash-high-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: os.environ/VERTEX_LOCATION
       reasoning_effort: "high"
@@ -108,7 +108,7 @@ model_list:
 
   - model_name: gemini-3.7-flash-medium-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: os.environ/VERTEX_LOCATION
       reasoning_effort: "medium"
@@ -149,7 +149,7 @@ model_list:
 
   - model_name: gemini-3.7-flash-low-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: os.environ/VERTEX_LOCATION
       reasoning_effort: "low"
@@ -167,6 +167,7 @@ model_list:
     model_info:
       input_cost_per_token: 0.000000075
       output_cost_per_token: 0.00000030
+
 
 
   # ==================== GEMINI 3.6 FLASH ====================
