@@ -165,7 +165,6 @@ model_list:
       input_cost_per_token: 0.000000075
       output_cost_per_token: 0.00000030
 
-
   # ==================== GEMINI 3.6 FLASH ====================
   - model_name: gemini-3.6-flash-high-studio
     litellm_params:
@@ -787,8 +786,10 @@ model_list:
       output_cost_per_token: 0.0000050
 
 router_settings:
-  # Routing Strategy
-  routing_strategy: "usage-based-routing"
+  # Priority routing (Always try primary AI Studio free tier first)
+  routing_strategy: "simple-shuffle"
+  cooldown_time: 15
+  num_retries: 0
 
   model_group_alias:
     # --- GEMINI AUTO ROUTER ALIASES ---
@@ -856,7 +857,7 @@ router_settings:
     reasoning-high: "gemini-3.1-pro-high-studio"
     gemini-reasoning-high: "gemini-3.1-pro-high-studio"
 
-  # Automatic Failover Mapping
+  # Exact Corresponding Failover Mapping (AI Studio -> Vertex AI for exact model & reasoning level)
   fallbacks:
     # Auto Router Fallbacks
     - "gemini-auto-studio": ["gemini-auto-vertex"]
@@ -941,6 +942,3 @@ router_settings:
     - "gemini-reasoning-medium": ["gemini-2.5-flash-medium-vertex"]
     - "reasoning-high": ["gemini-3.1-pro-high-vertex"]
     - "gemini-reasoning-high": ["gemini-3.1-pro-high-vertex"]
-
-  num_retries: 0
-  cooldown_time: 60
