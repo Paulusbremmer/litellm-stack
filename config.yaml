@@ -414,6 +414,7 @@ router_settings:
   cooldown_time: 300
   num_retries: 5
   enable_pre_call_checks: true
+  fallback_on_status_codes: [400, 403, 422, 429, 500, 502, 503, 504]
 
   model_group_alias:
     gemini-flash-auto: "flash-auto"
