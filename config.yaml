@@ -430,7 +430,7 @@ model_list:
   # ==================== GEMINI FLASH LITE ====================
   - model_name: gemini-flash-lite-high-studio
     litellm_params:
-      model: gemini/gemini-2.5-flash-lite
+      model: gemini/gemini-3.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
       reasoning_effort: "high"
@@ -472,7 +472,7 @@ model_list:
 
   - model_name: gemini-flash-lite-medium-studio
     litellm_params:
-      model: gemini/gemini-2.5-flash-lite
+      model: gemini/gemini-3.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
       reasoning_effort: "medium"
@@ -514,7 +514,7 @@ model_list:
 
   - model_name: gemini-flash-lite-low-studio
     litellm_params:
-      model: gemini/gemini-2.5-flash-lite
+      model: gemini/gemini-3.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
       reasoning_effort: "low"
@@ -849,6 +849,7 @@ router_settings:
     # --- GEMINI FLASH LITE ---
     gemini-flash-lite: "gemini-flash-lite-medium-studio"
     gemini-2.5-flash-lite: "gemini-flash-lite-medium-studio"
+    gemini-3.5-flash-lite: "gemini-flash-lite-medium-studio"
     gemini-flash-lite-high: "gemini-flash-lite-high-studio"
     gemini-flash-lite-medium: "gemini-flash-lite-medium-studio"
     gemini-flash-lite-low: "gemini-flash-lite-low-studio"
