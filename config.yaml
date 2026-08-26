@@ -4,9 +4,8 @@ litellm_settings:
   fallbacks_in_streaming: true
 
 model_list:
-  # ==================== FLASH AUTO ====================
-  # Priority order: AI Studio 3.7 -> 3.6 -> 3.5 -> 2.5 -> Vertex 3.7
-  - model_name: flash-auto
+  # ==================== FLASH AUTO CASCADE DEPLOYMENTS ====================
+  - model_name: flash-auto-3.7-studio
     litellm_params:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
@@ -26,7 +25,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: flash-auto
+  - model_name: flash-auto-3.6-studio
     litellm_params:
       model: gemini/gemini-3.6-flash
       api_key: os.environ/GEMINI_API_KEY
@@ -46,7 +45,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: flash-auto
+  - model_name: flash-auto-3.5-studio
     litellm_params:
       model: gemini/gemini-3.5-flash
       api_key: os.environ/GEMINI_API_KEY
@@ -66,7 +65,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: flash-auto
+  - model_name: flash-auto-2.5-studio
     litellm_params:
       model: gemini/gemini-2.5-flash
       api_key: os.environ/GEMINI_API_KEY
@@ -86,7 +85,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: flash-auto
+  - model_name: flash-auto-3.7-vertex
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
       custom_llm_provider: vertex_ai
@@ -109,7 +108,7 @@ model_list:
       output_cost_per_token: 0.00000030
 
   # ==================== GEMINI 3.7 FLASH ====================
-  - model_name: gemini-3.7-flash
+  - model_name: gemini-3.7-flash-studio
     litellm_params:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
@@ -129,7 +128,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: gemini-3.7-flash
+  - model_name: gemini-3.7-flash-vertex
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
       custom_llm_provider: vertex_ai
@@ -152,7 +151,7 @@ model_list:
       output_cost_per_token: 0.00000030
 
   # ==================== GEMINI 3.6 FLASH ====================
-  - model_name: gemini-3.6-flash
+  - model_name: gemini-3.6-flash-studio
     litellm_params:
       model: gemini/gemini-3.6-flash
       api_key: os.environ/GEMINI_API_KEY
@@ -172,7 +171,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: gemini-3.6-flash
+  - model_name: gemini-3.6-flash-vertex
     litellm_params:
       model: vertex_ai/gemini-3.6-flash
       custom_llm_provider: vertex_ai
@@ -195,7 +194,7 @@ model_list:
       output_cost_per_token: 0.00000030
 
   # ==================== GEMINI 3.5 FLASH ====================
-  - model_name: gemini-3.5-flash
+  - model_name: gemini-3.5-flash-studio
     litellm_params:
       model: gemini/gemini-3.5-flash
       api_key: os.environ/GEMINI_API_KEY
@@ -215,30 +214,8 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: gemini-3.5-flash
-    litellm_params:
-      model: vertex_ai/gemini-3.7-flash
-      custom_llm_provider: vertex_ai
-      vertex_project: os.environ/VERTEX_PROJECT
-      vertex_location: "global"
-      drop_params: true
-      safety_settings:
-        - category: HARM_CATEGORY_HARASSMENT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_HATE_SPEECH
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_SEXUALLY_EXPLICIT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_DANGEROUS_CONTENT
-          threshold: BLOCK_NONE
-        - category: HARM_CATEGORY_CIVIC_INTEGRITY
-          threshold: BLOCK_NONE
-    model_info:
-      input_cost_per_token: 0.000000075
-      output_cost_per_token: 0.00000030
-
   # ==================== GEMINI 2.5 FLASH ====================
-  - model_name: gemini-2.5-flash
+  - model_name: gemini-2.5-flash-studio
     litellm_params:
       model: gemini/gemini-2.5-flash
       api_key: os.environ/GEMINI_API_KEY
@@ -258,7 +235,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: gemini-2.5-flash
+  - model_name: gemini-2.5-flash-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-flash
       custom_llm_provider: vertex_ai
@@ -281,7 +258,7 @@ model_list:
       output_cost_per_token: 0.00000030
 
   # ==================== GEMINI FLASH LITE ====================
-  - model_name: gemini-flash-lite
+  - model_name: gemini-flash-lite-studio
     litellm_params:
       model: gemini/gemini-3.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
@@ -301,7 +278,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: gemini-flash-lite
+  - model_name: gemini-flash-lite-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-flash-lite
       custom_llm_provider: vertex_ai
@@ -324,7 +301,7 @@ model_list:
       output_cost_per_token: 0.00000015
 
   # ==================== GEMINI 3.1 PRO ====================
-  - model_name: gemini-3.1-pro
+  - model_name: gemini-3.1-pro-studio
     litellm_params:
       model: gemini/gemini-3.1-pro-preview
       api_key: os.environ/GEMINI_API_KEY
@@ -344,7 +321,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: gemini-3.1-pro
+  - model_name: gemini-3.1-pro-vertex
     litellm_params:
       model: vertex_ai/gemini-3.1-pro-preview
       custom_llm_provider: vertex_ai
@@ -367,7 +344,7 @@ model_list:
       output_cost_per_token: 0.0000050
 
   # ==================== GEMINI 2.5 PRO ====================
-  - model_name: gemini-2.5-pro
+  - model_name: gemini-2.5-pro-studio
     litellm_params:
       model: gemini/gemini-2.5-pro
       api_key: os.environ/GEMINI_API_KEY
@@ -387,7 +364,7 @@ model_list:
       input_cost_per_token: 0.0
       output_cost_per_token: 0.0
 
-  - model_name: gemini-2.5-pro
+  - model_name: gemini-2.5-pro-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-pro
       custom_llm_provider: vertex_ai
@@ -417,40 +394,109 @@ router_settings:
   fallback_on_status_codes: [400, 403, 422, 429, 500, 502, 503, 504]
 
   model_group_alias:
-    gemini-flash-auto: "flash-auto"
-    gemini-flash: "gemini-2.5-flash"
-    gemini-2.0-flash: "gemini-2.5-flash"
-    gemini-1.5-flash: "gemini-2.5-flash"
-    gemini-flash-high: "gemini-2.5-flash"
-    gemini-flash-medium: "gemini-2.5-flash"
-    gemini-flash-low: "gemini-2.5-flash"
-    gemini-2.5-flash-high: "gemini-2.5-flash"
-    gemini-2.5-flash-medium: "gemini-2.5-flash"
-    gemini-2.5-flash-low: "gemini-2.5-flash"
-    gemini-3.7-flash-high: "gemini-3.7-flash"
-    gemini-3.7-flash-medium: "gemini-3.7-flash"
-    gemini-3.7-flash-low: "gemini-3.7-flash"
-    gemini-3.6-flash-high: "gemini-3.6-flash"
-    gemini-3.6-flash-medium: "gemini-3.6-flash"
-    gemini-3.6-flash-low: "gemini-3.6-flash"
-    gemini-3.5-flash-high: "gemini-3.5-flash"
-    gemini-3.5-flash-medium: "gemini-3.5-flash"
-    gemini-3.5-flash-low: "gemini-3.5-flash"
-    gemini-2.5-flash-lite: "gemini-flash-lite"
-    gemini-3.5-flash-lite: "gemini-flash-lite"
-    gemini-flash-lite-high: "gemini-flash-lite"
-    gemini-flash-lite-medium: "gemini-flash-lite"
-    gemini-flash-lite-low: "gemini-flash-lite"
-    gemini-pro: "gemini-3.1-pro"
-    gemini-3.1-pro-preview: "gemini-3.1-pro"
-    gemini-3.1-pro-high: "gemini-3.1-pro"
-    gemini-pro-high: "gemini-3.1-pro"
-    gemini-3.1-pro-medium: "gemini-3.1-pro"
-    gemini-pro-medium: "gemini-3.1-pro"
-    gemini-3.1-pro-low: "gemini-3.1-pro"
-    gemini-pro-low: "gemini-3.1-pro"
-    gemini-2.5-pro-high: "gemini-2.5-pro"
-    gemini-2.5-pro-medium: "gemini-2.5-pro"
-    gemini-2.5-pro-low: "gemini-2.5-pro"
-    auto: "gemini-3.7-flash"
-    gemini-auto: "gemini-3.7-flash"
+    # --- EXACT DEPLOYMENT SELF ALIASES ---
+    flash-auto-3.7-studio: "flash-auto-3.7-studio"
+    flash-auto-3.6-studio: "flash-auto-3.6-studio"
+    flash-auto-3.5-studio: "flash-auto-3.5-studio"
+    flash-auto-2.5-studio: "flash-auto-2.5-studio"
+    flash-auto-3.7-vertex: "flash-auto-3.7-vertex"
+    gemini-3.7-flash-studio: "gemini-3.7-flash-studio"
+    gemini-3.7-flash-vertex: "gemini-3.7-flash-vertex"
+    gemini-3.6-flash-studio: "gemini-3.6-flash-studio"
+    gemini-3.6-flash-vertex: "gemini-3.6-flash-vertex"
+    gemini-3.5-flash-studio: "gemini-3.5-flash-studio"
+    gemini-2.5-flash-studio: "gemini-2.5-flash-studio"
+    gemini-2.5-flash-vertex: "gemini-2.5-flash-vertex"
+
+    # --- CLIENT REQUEST ALIASES ---
+    flash-auto: "flash-auto-3.7-studio"
+    gemini-flash-auto: "flash-auto-3.7-studio"
+    gemini-3.7-flash: "gemini-3.7-flash-studio"
+    gemini-3.7-flash-high: "gemini-3.7-flash-studio"
+    gemini-3.7-flash-medium: "gemini-3.7-flash-studio"
+    gemini-3.7-flash-low: "gemini-3.7-flash-studio"
+    gemini-3.6-flash: "gemini-3.6-flash-studio"
+    gemini-3.6-flash-high: "gemini-3.6-flash-studio"
+    gemini-3.6-flash-medium: "gemini-3.6-flash-studio"
+    gemini-3.6-flash-low: "gemini-3.6-flash-studio"
+    gemini-3.5-flash: "gemini-3.5-flash-studio"
+    gemini-3.5-flash-high: "gemini-3.5-flash-studio"
+    gemini-3.5-flash-medium: "gemini-3.5-flash-studio"
+    gemini-3.5-flash-low: "gemini-3.5-flash-studio"
+    gemini-flash: "gemini-2.5-flash-studio"
+    gemini-2.5-flash: "gemini-2.5-flash-studio"
+    gemini-2.0-flash: "gemini-2.5-flash-studio"
+    gemini-1.5-flash: "gemini-2.5-flash-studio"
+    gemini-flash-high: "gemini-2.5-flash-studio"
+    gemini-flash-medium: "gemini-2.5-flash-studio"
+    gemini-flash-low: "gemini-2.5-flash-studio"
+    gemini-2.5-flash-high: "gemini-2.5-flash-studio"
+    gemini-2.5-flash-medium: "gemini-2.5-flash-studio"
+    gemini-2.5-flash-low: "gemini-2.5-flash-studio"
+    gemini-flash-lite: "gemini-flash-lite-studio"
+    gemini-2.5-flash-lite: "gemini-flash-lite-studio"
+    gemini-3.5-flash-lite: "gemini-flash-lite-studio"
+    gemini-flash-lite-high: "gemini-flash-lite-studio"
+    gemini-flash-lite-medium: "gemini-flash-lite-studio"
+    gemini-flash-lite-low: "gemini-flash-lite-studio"
+    gemini-pro: "gemini-3.1-pro-studio"
+    gemini-3.1-pro: "gemini-3.1-pro-studio"
+    gemini-3.1-pro-preview: "gemini-3.1-pro-studio"
+    gemini-3.1-pro-high: "gemini-3.1-pro-studio"
+    gemini-pro-high: "gemini-3.1-pro-studio"
+    gemini-3.1-pro-medium: "gemini-3.1-pro-studio"
+    gemini-pro-medium: "gemini-3.1-pro-studio"
+    gemini-3.1-pro-low: "gemini-3.1-pro-studio"
+    gemini-pro-low: "gemini-3.1-pro-studio"
+    gemini-2.5-pro: "gemini-2.5-pro-studio"
+    gemini-2.5-pro-high: "gemini-2.5-pro-studio"
+    gemini-2.5-pro-medium: "gemini-2.5-pro-studio"
+    gemini-2.5-pro-low: "gemini-2.5-pro-studio"
+    auto: "gemini-3.7-flash-studio"
+    gemini-auto: "gemini-3.7-flash-studio"
+
+  # Cascading Fallbacks Definition (Maps from both original requested model names AND internal deployment names)
+  fallbacks:
+    - flash-auto: ["flash-auto-3.6-studio", "flash-auto-3.5-studio", "flash-auto-2.5-studio", "flash-auto-3.7-vertex"]
+    - gemini-flash-auto: ["flash-auto-3.6-studio", "flash-auto-3.5-studio", "flash-auto-2.5-studio", "flash-auto-3.7-vertex"]
+    - flash-auto-3.7-studio: ["flash-auto-3.6-studio", "flash-auto-3.5-studio", "flash-auto-2.5-studio", "flash-auto-3.7-vertex"]
+    - flash-auto-3.6-studio: ["flash-auto-3.5-studio", "flash-auto-2.5-studio", "flash-auto-3.7-vertex"]
+    - flash-auto-3.5-studio: ["flash-auto-2.5-studio", "flash-auto-3.7-vertex"]
+    - flash-auto-2.5-studio: ["flash-auto-3.7-vertex"]
+
+    - gemini-3.7-flash: ["gemini-3.7-flash-vertex"]
+    - gemini-3.7-flash-high: ["gemini-3.7-flash-vertex"]
+    - gemini-3.7-flash-medium: ["gemini-3.7-flash-vertex"]
+    - gemini-3.7-flash-low: ["gemini-3.7-flash-vertex"]
+    - gemini-3.7-flash-studio: ["gemini-3.7-flash-vertex"]
+
+    - gemini-3.6-flash: ["gemini-3.6-flash-vertex"]
+    - gemini-3.6-flash-high: ["gemini-3.6-flash-vertex"]
+    - gemini-3.6-flash-medium: ["gemini-3.6-flash-vertex"]
+    - gemini-3.6-flash-low: ["gemini-3.6-flash-vertex"]
+    - gemini-3.6-flash-studio: ["gemini-3.6-flash-vertex"]
+
+    - gemini-3.5-flash: ["gemini-3.7-flash-vertex"]
+    - gemini-3.5-flash-high: ["gemini-3.7-flash-vertex"]
+    - gemini-3.5-flash-medium: ["gemini-3.7-flash-vertex"]
+    - gemini-3.5-flash-low: ["gemini-3.7-flash-vertex"]
+    - gemini-3.5-flash-studio: ["gemini-3.7-flash-vertex"]
+
+    - gemini-flash: ["gemini-2.5-flash-vertex"]
+    - gemini-2.5-flash: ["gemini-2.5-flash-vertex"]
+    - gemini-2.5-flash-high: ["gemini-2.5-flash-vertex"]
+    - gemini-2.5-flash-medium: ["gemini-2.5-flash-vertex"]
+    - gemini-2.5-flash-low: ["gemini-2.5-flash-vertex"]
+    - gemini-2.5-flash-studio: ["gemini-2.5-flash-vertex"]
+
+    - gemini-flash-lite: ["gemini-flash-lite-vertex"]
+    - gemini-2.5-flash-lite: ["gemini-flash-lite-vertex"]
+    - gemini-3.5-flash-lite: ["gemini-flash-lite-vertex"]
+    - gemini-flash-lite-studio: ["gemini-flash-lite-vertex"]
+
+    - gemini-pro: ["gemini-3.1-pro-vertex"]
+    - gemini-3.1-pro: ["gemini-3.1-pro-vertex"]
+    - gemini-3.1-pro-studio: ["gemini-3.1-pro-vertex"]
+
+    - gemini-2.5-pro: ["gemini-2.5-pro-vertex"]
+    - gemini-2.5-pro-studio: ["gemini-2.5-pro-vertex"]
