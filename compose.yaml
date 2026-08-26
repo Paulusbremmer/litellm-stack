@@ -14,6 +14,9 @@ services:
       - GEMINI_API_KEY=${GEMINI_API_KEY}
       - VERTEX_PROJECT=${VERTEX_PROJECT}
       - VERTEX_LOCATION=${VERTEX_LOCATION}
+      - VERTEX_AI_LOCATION=${VERTEX_LOCATION}
+      - VERTEX_AI_API_BASE=https://global-aiplatform.googleapis.com
+      - VERTEX_API_BASE=https://global-aiplatform.googleapis.com
       - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS:-}
     volumes:
       - ./config.yaml:/app/config.yaml:ro

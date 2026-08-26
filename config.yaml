@@ -1,6 +1,7 @@
 litellm_settings:
   drop_params: true
   request_timeout: 15
+  fallbacks_in_streaming: true
 
 model_list:
   # ==================== GEMINI FLASH AUTO DEPLOYMENTS ====================
@@ -9,7 +10,6 @@ model_list:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-3.6-flash-medium-studio", "gemini-3.5-flash-medium-studio", "flash-auto-2.5-step", "gemini-3.7-flash-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -31,7 +31,6 @@ model_list:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-3.6-flash-medium-studio", "gemini-3.5-flash-medium-studio", "flash-auto-2.5-step", "gemini-3.7-flash-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -53,7 +52,6 @@ model_list:
       model: gemini/gemini-2.5-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-3.7-flash-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -76,7 +74,6 @@ model_list:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-auto-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -96,6 +93,7 @@ model_list:
   - model_name: gemini-auto-vertex
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -120,7 +118,6 @@ model_list:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "high"
       fallbacks: ["gemini-3.7-flash-high-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -140,6 +137,7 @@ model_list:
   - model_name: gemini-3.7-flash-high-vertex
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -163,7 +161,6 @@ model_list:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-3.7-flash-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -183,6 +180,7 @@ model_list:
   - model_name: gemini-3.7-flash-medium-vertex
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -206,7 +204,6 @@ model_list:
       model: gemini/gemini-3.7-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "low"
       fallbacks: ["gemini-3.7-flash-low-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -226,6 +223,7 @@ model_list:
   - model_name: gemini-3.7-flash-low-vertex
     litellm_params:
       model: vertex_ai/gemini-3.7-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -250,7 +248,6 @@ model_list:
       model: gemini/gemini-3.6-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "high"
       fallbacks: ["gemini-3.6-flash-high-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -270,6 +267,7 @@ model_list:
   - model_name: gemini-3.6-flash-high-vertex
     litellm_params:
       model: vertex_ai/gemini-3.6-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -293,7 +291,6 @@ model_list:
       model: gemini/gemini-3.6-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-3.6-flash-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -313,6 +310,7 @@ model_list:
   - model_name: gemini-3.6-flash-medium-vertex
     litellm_params:
       model: vertex_ai/gemini-3.6-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -336,7 +334,6 @@ model_list:
       model: gemini/gemini-3.6-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "low"
       fallbacks: ["gemini-3.6-flash-low-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -356,6 +353,7 @@ model_list:
   - model_name: gemini-3.6-flash-low-vertex
     litellm_params:
       model: vertex_ai/gemini-3.6-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -380,7 +378,6 @@ model_list:
       model: gemini/gemini-3.5-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "high"
       fallbacks: ["gemini-3.7-flash-high-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -402,7 +399,6 @@ model_list:
       model: gemini/gemini-3.5-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-3.7-flash-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -424,7 +420,6 @@ model_list:
       model: gemini/gemini-3.5-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "low"
       fallbacks: ["gemini-3.7-flash-low-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -447,7 +442,6 @@ model_list:
       model: gemini/gemini-2.5-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "high"
       fallbacks: ["gemini-2.5-flash-high-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -467,6 +461,7 @@ model_list:
   - model_name: gemini-2.5-flash-high-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -490,7 +485,6 @@ model_list:
       model: gemini/gemini-2.5-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-2.5-flash-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -510,6 +504,7 @@ model_list:
   - model_name: gemini-2.5-flash-medium-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -533,7 +528,6 @@ model_list:
       model: gemini/gemini-2.5-flash
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "low"
       fallbacks: ["gemini-2.5-flash-low-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -553,6 +547,7 @@ model_list:
   - model_name: gemini-2.5-flash-low-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-flash
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -577,7 +572,6 @@ model_list:
       model: gemini/gemini-3.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "high"
       fallbacks: ["gemini-flash-lite-high-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -597,6 +591,7 @@ model_list:
   - model_name: gemini-flash-lite-high-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-flash-lite
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -620,7 +615,6 @@ model_list:
       model: gemini/gemini-3.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-flash-lite-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -640,6 +634,7 @@ model_list:
   - model_name: gemini-flash-lite-medium-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-flash-lite
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -663,7 +658,6 @@ model_list:
       model: gemini/gemini-3.5-flash-lite
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "low"
       fallbacks: ["gemini-flash-lite-low-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -683,6 +677,7 @@ model_list:
   - model_name: gemini-flash-lite-low-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-flash-lite
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -707,7 +702,6 @@ model_list:
       model: gemini/gemini-3.1-pro-preview
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "high"
       fallbacks: ["gemini-3.1-pro-high-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -727,6 +721,7 @@ model_list:
   - model_name: gemini-3.1-pro-high-vertex
     litellm_params:
       model: vertex_ai/gemini-3.1-pro-preview
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -750,7 +745,6 @@ model_list:
       model: gemini/gemini-3.1-pro-preview
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-3.1-pro-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -770,6 +764,7 @@ model_list:
   - model_name: gemini-3.1-pro-medium-vertex
     litellm_params:
       model: vertex_ai/gemini-3.1-pro-preview
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -793,7 +788,6 @@ model_list:
       model: gemini/gemini-3.1-pro-preview
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "low"
       fallbacks: ["gemini-3.1-pro-low-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -813,6 +807,7 @@ model_list:
   - model_name: gemini-3.1-pro-low-vertex
     litellm_params:
       model: vertex_ai/gemini-3.1-pro-preview
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -837,7 +832,6 @@ model_list:
       model: gemini/gemini-2.5-pro
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "high"
       fallbacks: ["gemini-2.5-pro-high-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -857,6 +851,7 @@ model_list:
   - model_name: gemini-2.5-pro-high-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-pro
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -880,7 +875,6 @@ model_list:
       model: gemini/gemini-2.5-pro
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "medium"
       fallbacks: ["gemini-2.5-pro-medium-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -900,6 +894,7 @@ model_list:
   - model_name: gemini-2.5-pro-medium-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-pro
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -923,7 +918,6 @@ model_list:
       model: gemini/gemini-2.5-pro
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 15
-      reasoning_effort: "low"
       fallbacks: ["gemini-2.5-pro-low-vertex"]
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
@@ -943,6 +937,7 @@ model_list:
   - model_name: gemini-2.5-pro-low-vertex
     litellm_params:
       model: vertex_ai/gemini-2.5-pro
+      custom_llm_provider: vertex_ai
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       drop_params: true
@@ -967,6 +962,7 @@ router_settings:
   cooldown_time: 300
   num_retries: 0
   allowed_fails: 1
+  enable_pre_call_checks: true
 
   model_group_alias:
     # --- EXACT DEPLOYMENT SELF ALIASES (Prevents model alias loopbacks during fallback) ---
