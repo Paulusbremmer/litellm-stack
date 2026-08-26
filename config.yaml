@@ -94,7 +94,7 @@ model_list:
       model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "medium"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -137,7 +137,7 @@ model_list:
       model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "high"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -179,7 +179,7 @@ model_list:
       model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "medium"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -221,7 +221,7 @@ model_list:
       model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "low"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -264,7 +264,7 @@ model_list:
       model: vertex_ai/gemini-3.6-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "high"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -306,7 +306,7 @@ model_list:
       model: vertex_ai/gemini-3.6-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "medium"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -348,7 +348,7 @@ model_list:
       model: vertex_ai/gemini-3.6-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "low"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -455,7 +455,7 @@ model_list:
       model: vertex_ai/gemini-2.5-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "high"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -497,7 +497,7 @@ model_list:
       model: vertex_ai/gemini-2.5-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "medium"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -539,7 +539,7 @@ model_list:
       model: vertex_ai/gemini-2.5-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "low"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -582,7 +582,7 @@ model_list:
       model: vertex_ai/gemini-2.5-flash-lite
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "high"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -624,7 +624,7 @@ model_list:
       model: vertex_ai/gemini-2.5-flash-lite
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "medium"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -666,7 +666,7 @@ model_list:
       model: vertex_ai/gemini-2.5-flash-lite
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "low"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -709,7 +709,7 @@ model_list:
       model: vertex_ai/gemini-3.1-pro-preview
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "high"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -751,7 +751,7 @@ model_list:
       model: vertex_ai/gemini-3.1-pro-preview
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "medium"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -793,7 +793,7 @@ model_list:
       model: vertex_ai/gemini-3.1-pro-preview
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "low"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -836,7 +836,7 @@ model_list:
       model: vertex_ai/gemini-2.5-pro
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "high"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -878,7 +878,7 @@ model_list:
       model: vertex_ai/gemini-2.5-pro
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "medium"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -920,7 +920,7 @@ model_list:
       model: vertex_ai/gemini-2.5-pro
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
-      reasoning_effort: "low"
+      drop_params: true
       safety_settings:
         - category: HARM_CATEGORY_HARASSMENT
           threshold: BLOCK_NONE
@@ -939,10 +939,9 @@ model_list:
 router_settings:
   # Priority routing (Always try primary AI Studio free tier first)
   routing_strategy: "simple-shuffle"
-  cooldown_time: 15
+  cooldown_time: 300
   num_retries: 0
   allowed_fails: 1
-  fallback_on_status_codes: [400, 403, 422, 429, 500, 502, 503, 504]
 
   model_group_alias:
     # --- FLASH AUTO CASCADE ALIASES ---
