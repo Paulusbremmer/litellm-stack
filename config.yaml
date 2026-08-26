@@ -431,7 +431,7 @@ model_list:
 
   - model_name: gemini-2.5-flash-high-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       reasoning_effort: "high"
@@ -473,7 +473,7 @@ model_list:
 
   - model_name: gemini-2.5-flash-medium-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       reasoning_effort: "medium"
@@ -515,7 +515,7 @@ model_list:
 
   - model_name: gemini-2.5-flash-low-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       reasoning_effort: "low"
@@ -558,7 +558,7 @@ model_list:
 
   - model_name: gemini-flash-lite-high-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash-lite
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       reasoning_effort: "high"
@@ -574,8 +574,8 @@ model_list:
         - category: HARM_CATEGORY_CIVIC_INTEGRITY
           threshold: BLOCK_NONE
     model_info:
-      input_cost_per_token: 0.0000000375
-      output_cost_per_token: 0.00000015
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
 
   - model_name: gemini-flash-lite-medium-studio
     litellm_params:
@@ -600,7 +600,7 @@ model_list:
 
   - model_name: gemini-flash-lite-medium-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash-lite
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       reasoning_effort: "medium"
@@ -616,8 +616,8 @@ model_list:
         - category: HARM_CATEGORY_CIVIC_INTEGRITY
           threshold: BLOCK_NONE
     model_info:
-      input_cost_per_token: 0.0000000375
-      output_cost_per_token: 0.00000015
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
 
   - model_name: gemini-flash-lite-low-studio
     litellm_params:
@@ -642,7 +642,7 @@ model_list:
 
   - model_name: gemini-flash-lite-low-vertex
     litellm_params:
-      model: vertex_ai/gemini-2.5-flash-lite
+      model: vertex_ai/gemini-3.7-flash
       vertex_project: os.environ/VERTEX_PROJECT
       vertex_location: "global"
       reasoning_effort: "low"
@@ -658,8 +658,8 @@ model_list:
         - category: HARM_CATEGORY_CIVIC_INTEGRITY
           threshold: BLOCK_NONE
     model_info:
-      input_cost_per_token: 0.0000000375
-      output_cost_per_token: 0.00000015
+      input_cost_per_token: 0.000000075
+      output_cost_per_token: 0.00000030
 
   # ==================== GEMINI 3.1 PRO ====================
   - model_name: gemini-3.1-pro-high-studio
@@ -1012,7 +1012,7 @@ router_settings:
     - "auto": ["gemini-auto-vertex"]
     - "gemini-auto-high": ["gemini-3.1-pro-high-vertex"]
     - "gemini-auto-medium": ["gemini-3.7-flash-medium-vertex"]
-    - "gemini-auto-low": ["gemini-flash-lite-low-vertex"]
+    - "gemini-auto-low": ["gemini-3.7-flash-low-vertex"]
 
     # 3.7 Flash
     - "gemini-3.7-flash-studio": ["gemini-3.7-flash-medium-vertex"]
@@ -1025,14 +1025,14 @@ router_settings:
     - "gemini-3.7-flash-low": ["gemini-3.7-flash-low-vertex"]
 
     # 3.6 Flash
-    - "gemini-3.6-flash-studio": ["gemini-3.6-flash-medium-vertex"]
-    - "gemini-3.6-flash": ["gemini-3.6-flash-medium-vertex"]
-    - "gemini-3.6-flash-high-studio": ["gemini-3.6-flash-high-vertex"]
-    - "gemini-3.6-flash-high": ["gemini-3.6-flash-high-vertex"]
-    - "gemini-3.6-flash-medium-studio": ["gemini-3.6-flash-medium-vertex"]
-    - "gemini-3.6-flash-medium": ["gemini-3.6-flash-medium-vertex"]
-    - "gemini-3.6-flash-low-studio": ["gemini-3.6-flash-low-vertex"]
-    - "gemini-3.6-flash-low": ["gemini-3.6-flash-low-vertex"]
+    - "gemini-3.6-flash-studio": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-3.6-flash": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-3.6-flash-high-studio": ["gemini-3.7-flash-high-vertex"]
+    - "gemini-3.6-flash-high": ["gemini-3.7-flash-high-vertex"]
+    - "gemini-3.6-flash-medium-studio": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-3.6-flash-medium": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-3.6-flash-low-studio": ["gemini-3.7-flash-low-vertex"]
+    - "gemini-3.6-flash-low": ["gemini-3.7-flash-low-vertex"]
 
     # 3.5 Flash
     - "gemini-3.5-flash-studio": ["gemini-3.7-flash-medium-vertex"]
@@ -1045,28 +1045,28 @@ router_settings:
     - "gemini-3.5-flash-low": ["gemini-3.7-flash-low-vertex"]
 
     # 2.5 Flash
-    - "gemini-2.5-flash-studio": ["gemini-2.5-flash-medium-vertex"]
-    - "gemini-flash": ["gemini-2.5-flash-medium-vertex"]
-    - "gemini-2.5-flash": ["gemini-2.5-flash-medium-vertex"]
-    - "gemini-2.5-flash-high-studio": ["gemini-2.5-flash-high-vertex"]
-    - "gemini-2.5-flash-high": ["gemini-2.5-flash-high-vertex"]
-    - "gemini-flash-high": ["gemini-2.5-flash-high-vertex"]
-    - "gemini-2.5-flash-medium-studio": ["gemini-2.5-flash-medium-vertex"]
-    - "gemini-2.5-flash-medium": ["gemini-2.5-flash-medium-vertex"]
-    - "gemini-flash-medium": ["gemini-2.5-flash-medium-vertex"]
-    - "gemini-2.5-flash-low-studio": ["gemini-2.5-flash-low-vertex"]
-    - "gemini-2.5-flash-low": ["gemini-2.5-flash-low-vertex"]
-    - "gemini-flash-low": ["gemini-2.5-flash-low-vertex"]
+    - "gemini-2.5-flash-studio": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-flash": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-2.5-flash": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-2.5-flash-high-studio": ["gemini-3.7-flash-high-vertex"]
+    - "gemini-2.5-flash-high": ["gemini-3.7-flash-high-vertex"]
+    - "gemini-flash-high": ["gemini-3.7-flash-high-vertex"]
+    - "gemini-2.5-flash-medium-studio": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-2.5-flash-medium": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-flash-medium": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-2.5-flash-low-studio": ["gemini-3.7-flash-low-vertex"]
+    - "gemini-2.5-flash-low": ["gemini-3.7-flash-low-vertex"]
+    - "gemini-flash-low": ["gemini-3.7-flash-low-vertex"]
 
     # Flash Lite
-    - "gemini-flash-lite-studio": ["gemini-flash-lite-medium-vertex"]
-    - "gemini-flash-lite": ["gemini-flash-lite-medium-vertex"]
-    - "gemini-flash-lite-high-studio": ["gemini-flash-lite-high-vertex"]
-    - "gemini-flash-lite-high": ["gemini-flash-lite-high-vertex"]
-    - "gemini-flash-lite-medium-studio": ["gemini-flash-lite-medium-vertex"]
-    - "gemini-flash-lite-medium": ["gemini-flash-lite-medium-vertex"]
-    - "gemini-flash-lite-low-studio": ["gemini-flash-lite-low-vertex"]
-    - "gemini-flash-lite-low": ["gemini-flash-lite-low-vertex"]
+    - "gemini-flash-lite-studio": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-flash-lite": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-flash-lite-high-studio": ["gemini-3.7-flash-high-vertex"]
+    - "gemini-flash-lite-high": ["gemini-3.7-flash-high-vertex"]
+    - "gemini-flash-lite-medium-studio": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-flash-lite-medium": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-flash-lite-low-studio": ["gemini-3.7-flash-low-vertex"]
+    - "gemini-flash-lite-low": ["gemini-3.7-flash-low-vertex"]
 
     # 3.1 Pro
     - "gemini-3.1-pro-studio": ["gemini-3.1-pro-medium-vertex"]
@@ -1093,9 +1093,9 @@ router_settings:
     - "gemini-2.5-pro-low": ["gemini-2.5-pro-low-vertex"]
 
     # Generic Reasoning
-    - "reasoning-low": ["gemini-flash-lite-low-vertex"]
-    - "gemini-reasoning-low": ["gemini-flash-lite-low-vertex"]
-    - "reasoning-medium": ["gemini-2.5-flash-medium-vertex"]
-    - "gemini-reasoning-medium": ["gemini-2.5-flash-medium-vertex"]
+    - "reasoning-low": ["gemini-3.7-flash-low-vertex"]
+    - "gemini-reasoning-low": ["gemini-3.7-flash-low-vertex"]
+    - "reasoning-medium": ["gemini-3.7-flash-medium-vertex"]
+    - "gemini-reasoning-medium": ["gemini-3.7-flash-medium-vertex"]
     - "reasoning-high": ["gemini-3.1-pro-high-vertex"]
     - "gemini-reasoning-high": ["gemini-3.1-pro-high-vertex"]
