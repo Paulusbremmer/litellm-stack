@@ -920,6 +920,8 @@ router_settings:
   routing_strategy: "simple-shuffle"
   cooldown_time: 15
   num_retries: 0
+  allowed_fails: 1
+  fallback_on_status_codes: [400, 403, 422, 429, 500, 502, 503, 504]
 
   model_group_alias:
     # --- FLASH AUTO CASCADE ALIASES ---
