@@ -1,6 +1,7 @@
 litellm_settings:
   drop_params: true
   request_timeout: 15
+  callbacks: ["custom_callbacks.refusal_interceptor"]
 
 model_list:
   # ==================== GEMINI FLASH AUTO DEPLOYMENTS ====================
