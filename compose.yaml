@@ -8,6 +8,8 @@ services:
     depends_on:
       litellm-db:
         condition: service_healthy
+      litellm-redis:
+        condition: service_healthy
     environment:
       - LITELLM_MASTER_KEY=${LITELLM_MASTER_KEY}
       - DATABASE_URL=postgresql://${POSTGRES_USER}:${POSTGRES_PASSWORD}@litellm-db:5432/${POSTGRES_DB}
@@ -18,6 +20,8 @@ services:
       - VERTEX_AI_API_BASE=https://global-aiplatform.googleapis.com
       - VERTEX_API_BASE=https://global-aiplatform.googleapis.com
       - GOOGLE_APPLICATION_CREDENTIALS=${GOOGLE_APPLICATION_CREDENTIALS:-}
+      - REDIS_HOST=litellm-redis
+      - REDIS_PORT=6379
     volumes:
       - ./config.yaml:/app/config.yaml:ro
       - ./custom_callbacks.py:/app/custom_callbacks.py:ro
@@ -29,6 +33,7 @@ services:
       - "4000"
       - --host
       - "0.0.0.0"
+
   litellm-db:
     image: postgres:16-alpine
     container_name: litellm-db
@@ -46,6 +51,21 @@ services:
       interval: 5s
       timeout: 5s
       retries: 5
+
+  litellm-redis:
+    image: redis:7-alpine
+    container_name: litellm-redis
+    restart: unless-stopped
+    command: redis-server --save 60 1 --loglevel notice
+    volumes:
+      - litellm_redis_data:/data
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
 volumes:
   litellm_db_data: null
+  litellm_redis_data: null
 networks: {}

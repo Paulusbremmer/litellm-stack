@@ -2,6 +2,12 @@ litellm_settings:
   drop_params: true
   request_timeout: 15
   callbacks: ["custom_callbacks.refusal_interceptor"]
+  cache: true
+  cache_params:
+    type: "redis"
+    host: os.environ/REDIS_HOST
+    port: 6379
+    ttl: 3600
 
 model_list:
   # ==================== GEMINI FLASH AUTO DEPLOYMENTS ====================
@@ -943,6 +949,8 @@ router_settings:
   cooldown_time: 300
   num_retries: 0
   allowed_fails: 1
+  redis_host: os.environ/REDIS_HOST
+  redis_port: 6379
 
   model_group_alias:
     # --- FLASH AUTO CASCADE ALIASES ---
