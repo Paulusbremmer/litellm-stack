@@ -17,7 +17,13 @@ model_list:
       api_key: os.environ/GEMINI_API_KEY
       request_timeout: 30
 
-  - model_name: imagen-3
+  - model_name: imagen-3-studio
+    litellm_params:
+      model: gemini/imagen-3.0-generate-002
+      api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 30
+
+  - model_name: imagen-3-vertex
     litellm_params:
       model: vertex_ai/imagen-3.0-generate-002
       custom_llm_provider: vertex_ai
@@ -968,11 +974,13 @@ router_settings:
 
   model_group_alias:
     # --- IMAGE GENERATION ALIASES ---
-    dall-e-3: "imagen-3"
-    dall-e-2: "imagen-3"
-    imagen: "imagen-3"
-    imagen-3: "imagen-3"
-    imagen-3.0-generate-002: "imagen-3"
+    dall-e-3: "imagen-3-studio"
+    dall-e-2: "imagen-3-studio"
+    imagen: "imagen-3-studio"
+    imagen-3: "imagen-3-studio"
+    imagen-3-studio: "imagen-3-studio"
+    imagen-3-vertex: "imagen-3-vertex"
+    imagen-3.0-generate-002: "imagen-3-studio"
 
     # --- FLASH AUTO CASCADE ALIASES ---
     flash-auto: "flash-auto"
@@ -1052,6 +1060,11 @@ router_settings:
 
   # Exact Corresponding Failover Mapping & Cascading Fallbacks
   fallbacks:
+    # Image Generation Fallbacks (AI Studio Imagen 3 -> Vertex AI Imagen 3)
+    - "imagen-3-studio": ["imagen-3-vertex"]
+    - "dall-e-3": ["imagen-3-vertex"]
+    - "imagen-3": ["imagen-3-vertex"]
+
     # FLASH AUTO CASCADE (AI Studio 3.7 -> 3.6 -> 3.5 -> Vertex 3.7)
     - "flash-auto": ["gemini-3.6-flash-medium-studio", "gemini-3.5-flash-medium-studio", "gemini-3.7-flash-medium-vertex"]
     - "gemini-flash-auto": ["gemini-3.6-flash-medium-studio", "gemini-3.5-flash-medium-studio", "gemini-3.7-flash-medium-vertex"]
