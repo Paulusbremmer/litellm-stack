@@ -10,6 +10,20 @@ litellm_settings:
     ttl: 3600
 
 model_list:
+  # ==================== IMAGE GENERATION DEPLOYMENTS ====================
+  - model_name: gemini-2.5-flash-image
+    litellm_params:
+      model: gemini/gemini-2.5-flash-image
+      api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 30
+
+  - model_name: imagen-3
+    litellm_params:
+      model: vertex_ai/imagen-3.0-generate-002
+      custom_llm_provider: vertex_ai
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: "us-central1"
+      request_timeout: 30
   # ==================== GEMINI FLASH AUTO DEPLOYMENTS ====================
   - model_name: flash-auto
     litellm_params:
@@ -953,6 +967,13 @@ router_settings:
   redis_port: 6379
 
   model_group_alias:
+    # --- IMAGE GENERATION ALIASES ---
+    dall-e-3: "imagen-3"
+    dall-e-2: "imagen-3"
+    imagen: "imagen-3"
+    imagen-3: "imagen-3"
+    imagen-3.0-generate-002: "imagen-3"
+
     # --- FLASH AUTO CASCADE ALIASES ---
     flash-auto: "flash-auto"
     gemini-flash-auto: "flash-auto"
