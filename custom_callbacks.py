@@ -1,12 +1,45 @@
+import re
 import litellm
 from litellm.integrations.custom_logger import CustomLogger
 
+# Comprehensive list of regex patterns for soft refusals
+REFUSAL_PATTERNS = [
+    r"cannot fulfill",
+    r"unable to fulfill",
+    r"cannot assist",
+    r"unable to assist",
+    r"cannot comply",
+    r"unable to comply",
+    r"cannot generate",
+    r"unable to generate",
+    r"cannot continue (this|with this)? roleplay",
+    r"unable to continue (this|with this)? roleplay",
+    r"cannot perform",
+    r"must decline",
+    r"against my safety",
+    r"violates (my|safety) (guidelines|policy)",
+    r"sorry, (but )?i cannot",
+    r"sorry, (but )?i am unable",
+    r"as an ai (language model)?, i (cannot|am unable)",
+    r"i am not able to fulfill",
+    r"i\'m not able to fulfill",
+]
+
+REFUSAL_REGEX = re.compile("|".join(REFUSAL_PATTERNS), re.IGNORECASE)
+
 class RefusalInterceptor(CustomLogger):
+    def _inspect_text_for_refusal(self, text: str, model: str):
+        if text and REFUSAL_REGEX.search(text):
+            raise litellm.APIError(
+                status_code=400,
+                message=f"Soft refusal detected in response text: {text[:100]}...",
+                model=model,
+                llm_provider="gemini",
+            )
+
     async def async_log_success_event(self, kwargs, response_obj, start_time, end_time):
         """
-        Inspects model response content for soft refusal phrases.
-        If a refusal phrase is detected, raises an APIError(status_code=400),
-        forcing LiteLLM Router to trigger the fallback sequence.
+        Inspects completed non-streaming response object for soft refusal phrases.
         """
         if response_obj and hasattr(response_obj, "choices") and response_obj.choices:
             for choice in response_obj.choices:
@@ -16,28 +49,17 @@ class RefusalInterceptor(CustomLogger):
                 elif hasattr(choice, "delta") and hasattr(choice.delta, "content"):
                     content = choice.delta.content or ""
 
-                if content:
-                    content_lower = content.lower()
-                    refusal_patterns = [
-                        "i cannot fulfill this request",
-                        "i am unable to fulfill this request",
-                        "i cannot assist with this request",
-                        "i am sorry, but i cannot",
-                        "i'm sorry, but i cannot",
-                        "as an ai, i cannot fulfill",
-                        "as an ai language model, i cannot",
-                        "i am not able to fulfill this request",
-                        "i cannot continue this roleplay",
-                        "i cannot continue with this roleplay",
-                        "i am unable to continue this roleplay",
-                        "unable to continue this roleplay",
-                    ]
-                    if any(pattern in content_lower for pattern in refusal_patterns):
-                        raise litellm.APIError(
-                            status_code=400,
-                            message=f"Soft refusal detected in model response text: {content[:100]}...",
-                            model=kwargs.get("model"),
-                            llm_provider=kwargs.get("custom_llm_provider", "gemini"),
-                        )
+                self._inspect_text_for_refusal(content, kwargs.get("model", "unknown"))
+
+    async def async_post_call_success_hook(self, data, user_api_key_dict, response):
+        """
+        Post-call proxy hook for inspecting raw response data before returning to client.
+        """
+        model = data.get("model", "unknown") if isinstance(data, dict) else "unknown"
+        if isinstance(response, dict) and "choices" in response:
+            for choice in response.get("choices", []):
+                msg = choice.get("message", {}) or choice.get("delta", {})
+                content = msg.get("content", "") or ""
+                self._inspect_text_for_refusal(content, model)
 
 refusal_interceptor = RefusalInterceptor()
