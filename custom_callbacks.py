@@ -23,6 +23,8 @@ REFUSAL_PATTERNS = [
     r"as an ai (language model)?, i (cannot|am unable)",
     r"i am not able to fulfill",
     r"i\'m not able to fulfill",
+    r"cannot participate",
+    r"unable to participate",
 ]
 
 REFUSAL_REGEX = re.compile("|".join(REFUSAL_PATTERNS), re.IGNORECASE)
