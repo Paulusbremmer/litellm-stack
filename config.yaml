@@ -967,8 +967,9 @@ router_settings:
   # Priority routing (Always try primary AI Studio free tier first)
   routing_strategy: "simple-shuffle"
   cooldown_time: 300
-  num_retries: 0
+  num_retries: 5
   allowed_fails: 1
+  fallback_on_status_codes: [400, 403, 422, 429, 500, 502, 503, 504]
   redis_host: os.environ/REDIS_HOST
   redis_port: 6379
 
