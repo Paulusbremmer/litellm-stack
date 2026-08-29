@@ -27,6 +27,10 @@ class RefusalInterceptor(CustomLogger):
                         "as an ai, i cannot fulfill",
                         "as an ai language model, i cannot",
                         "i am not able to fulfill this request",
+                        "i cannot continue this roleplay",
+                        "i cannot continue with this roleplay",
+                        "i am unable to continue this roleplay",
+                        "unable to continue this roleplay",
                     ]
                     if any(pattern in content_lower for pattern in refusal_patterns):
                         raise litellm.APIError(
