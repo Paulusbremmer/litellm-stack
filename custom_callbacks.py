@@ -12,8 +12,8 @@ REFUSAL_PATTERNS = [
     r"unable to comply",
     r"cannot generate",
     r"unable to generate",
-    r"cannot continue (this|with this)? roleplay",
-    r"unable to continue (this|with this)? roleplay",
+    r"cannot continue",
+    r"unable to continue",
     r"cannot perform",
     r"must decline",
     r"against my safety",
@@ -25,6 +25,11 @@ REFUSAL_PATTERNS = [
     r"i\'m not able to fulfill",
     r"cannot participate",
     r"unable to participate",
+    r"romantic or sexual",
+    r"sexual roleplay",
+    r"romantic roleplay",
+    r"non-sexual topic",
+    r"adjust the narrative",
 ]
 
 REFUSAL_REGEX = re.compile("|".join(REFUSAL_PATTERNS), re.IGNORECASE)
@@ -63,5 +68,12 @@ class RefusalInterceptor(CustomLogger):
                 msg = choice.get("message", {}) or choice.get("delta", {})
                 content = msg.get("content", "") or ""
                 self._inspect_text_for_refusal(content, model)
+
+    async def async_post_call_streaming_hook(self, user_api_key_dict: dict, response: str):
+        """
+        Post-call proxy hook for inspecting accumulated streaming response text.
+        """
+        if response and isinstance(response, str):
+            self._inspect_text_for_refusal(response, "streaming-model")
 
 refusal_interceptor = RefusalInterceptor()
