@@ -11,10 +11,32 @@ litellm_settings:
 
 model_list:
   # ==================== IMAGE GENERATION DEPLOYMENTS ====================
-  - model_name: gemini-2.5-flash-image
+  - model_name: gemini-3.1-flash-image-studio
+    litellm_params:
+      model: gemini/gemini-3.1-flash-image
+      api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 30
+
+  - model_name: gemini-3.1-flash-image-vertex
+    litellm_params:
+      model: vertex_ai/gemini-3.1-flash-image
+      custom_llm_provider: vertex_ai
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: "global"
+      request_timeout: 30
+
+  - model_name: gemini-2.5-flash-image-studio
     litellm_params:
       model: gemini/gemini-2.5-flash-image
       api_key: os.environ/GEMINI_API_KEY
+      request_timeout: 30
+
+  - model_name: gemini-2.5-flash-image-vertex
+    litellm_params:
+      model: vertex_ai/gemini-2.5-flash-image
+      custom_llm_provider: vertex_ai
+      vertex_project: os.environ/VERTEX_PROJECT
+      vertex_location: "global"
       request_timeout: 30
 
   - model_name: imagen-3-studio
@@ -983,6 +1005,16 @@ router_settings:
     imagen-3-vertex: "imagen-3-vertex"
     imagen-3.0-generate-002: "imagen-3-studio"
 
+    gemini-3.1-flash-image: "gemini-3.1-flash-image-studio"
+    gemini-3.1-image: "gemini-3.1-flash-image-studio"
+    gemini-3.1-flash-image-studio: "gemini-3.1-flash-image-studio"
+    gemini-3.1-flash-image-vertex: "gemini-3.1-flash-image-vertex"
+
+    gemini-2.5-flash-image: "gemini-2.5-flash-image-studio"
+    gemini-2.5-image: "gemini-2.5-flash-image-studio"
+    gemini-2.5-flash-image-studio: "gemini-2.5-flash-image-studio"
+    gemini-2.5-flash-image-vertex: "gemini-2.5-flash-image-vertex"
+
     # --- FLASH AUTO CASCADE ALIASES ---
     flash-auto: "flash-auto"
     gemini-flash-auto: "flash-auto"
@@ -1061,7 +1093,15 @@ router_settings:
 
   # Exact Corresponding Failover Mapping & Cascading Fallbacks
   fallbacks:
-    # Image Generation Fallbacks (AI Studio Imagen 3 -> Vertex AI Imagen 3)
+    # Image Generation Fallbacks (AI Studio -> Vertex AI global)
+    - "gemini-3.1-flash-image-studio": ["gemini-3.1-flash-image-vertex"]
+    - "gemini-3.1-flash-image": ["gemini-3.1-flash-image-vertex"]
+    - "gemini-3.1-image": ["gemini-3.1-flash-image-vertex"]
+
+    - "gemini-2.5-flash-image-studio": ["gemini-2.5-flash-image-vertex"]
+    - "gemini-2.5-flash-image": ["gemini-2.5-flash-image-vertex"]
+    - "gemini-2.5-image": ["gemini-2.5-flash-image-vertex"]
+
     - "imagen-3-studio": ["imagen-3-vertex"]
     - "dall-e-3": ["imagen-3-vertex"]
     - "imagen-3": ["imagen-3-vertex"]
